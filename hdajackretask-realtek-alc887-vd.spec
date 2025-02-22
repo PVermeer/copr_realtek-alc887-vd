@@ -1,9 +1,9 @@
 Name: hdajackretask-realtek-alc887-vd
-Version: 0.0.1
+Version: 0.0.2
 Release: 1%{?dist}
 License: GPL-3.0 license
 Summary: RPM package to install 5.1 firware for realtek-alc887-vd to enable 5.1 surround on immutable filesystems.
-Url: https://github.com/PVermeer/copr-realtek-alc887-vd
+Url: https://github.com/PVermeer/copr_realtek-alc887-vd
 
 BuildRequires: git
 
@@ -16,7 +16,7 @@ Pink mic, rear side -> Center/LFE
 Blue line in, rear side -> Line out to back
 
 %prep
-git clone https://github.com/PVermeer/copr-realtek-alc887-vd.git %{workdir}
+git clone https://github.com/PVermeer/copr_realtek-alc887-vd.git %{workdir}
 
 %install
 mkdir -p %{buildroot}/etc/modprobe.d
