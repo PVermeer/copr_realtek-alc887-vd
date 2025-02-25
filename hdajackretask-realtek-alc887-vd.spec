@@ -7,7 +7,7 @@ Url: https://github.com/PVermeer/copr_realtek-alc887-vd
 
 BuildRequires: git
 
-%define workdir %{_builddir}/work
+%define workdir %{_builddir}/%{name}
 
 %description
 RPM package to install 5.1 firware for realtek-alc887-vd to enable 5.1 surround on immutable filesystems.
@@ -18,12 +18,16 @@ Blue line in, rear side -> Line out to back
 %prep
 git clone https://github.com/PVermeer/copr_realtek-alc887-vd.git %{workdir}
 
+%build
+
 %install
 mkdir -p %{buildroot}/etc/modprobe.d
 mkdir -p %{buildroot}/lib/firmware
 
 install %{workdir}/hda-jack-retask.fw %{buildroot}/lib/firmware
 install %{workdir}/hda-jack-retask.conf %{buildroot}/etc/modprobe.d
+
+%check
 
 %files
 /lib/firmware/hda-jack-retask.fw
